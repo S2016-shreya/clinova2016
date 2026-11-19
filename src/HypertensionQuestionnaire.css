@@ -1,0 +1,114 @@
+
+.cln-form {
+  max-width: 850px;
+  margin: 30px auto;
+  padding: 24px;
+  background: #f8fcff;
+  font-family: Arial, sans-serif;
+  color: #18344a;
+}
+
+.cln-form header {
+  background: linear-gradient(135deg, #087f8c, #2855a5);
+  color: white;
+  padding: 30px;
+  border-radius: 18px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.cln-form header h1 {
+  font-size: 27px;
+  margin: 10px 0;
+}
+
+.cln-form section {
+  background: white;
+  padding: 24px;
+  border: 1px solid #dce9f0;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 5px 18px rgba(0, 70, 110, .06);
+}
+
+.cln-form h2 {
+  color: #087f8c;
+  border-bottom: 2px solid #d9f0f2;
+  padding-bottom: 12px;
+}
+
+.cln-form article {
+  padding: 18px 0;
+  border-bottom: 1px solid #e7eef3;
+}
+
+.cln-form h3 {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.cln-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.cln-field > label {
+  font-weight: 600;
+}
+
+.cln-field input:not([type="checkbox"]),
+.cln-field select,
+.cln-field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbdbe6;
+  border-radius: 9px;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.cln-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cln-options label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 400;
+}
+
+.cln-form button {
+  background: #087f8c;
+  color: white;
+  border: 0;
+  border-radius: 10px;
+  padding: 15px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+}
+
+.cln-form button:disabled {
+  opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  .cln-form {
+    padding: 10px;
+    margin: 10px auto;
+  }
+
+  .cln-form section {
+    padding: 16px;
+  }
+
+  .cln-form header h1 {
+    font-size: 22px;
+  }
+}

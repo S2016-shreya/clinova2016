@@ -1,0 +1,794 @@
+.research-dashboard{max-width:1200px;margin:auto;padding:45px 24px 75px;text-align:left;color:#18324c;font-family:'Segoe UI',Arial,sans-serif}.dashboard-heading{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:28px}.dashboard-heading h1{font-size:clamp(28px,3.5vw,42px);margin:10px 0}.dashboard-heading p,.chart-card p{color:#6a8197}.dashboard-kicker{font-size:12px;font-weight:800;letter-spacing:2px;color:#078c92!important}.dashboard-actions{display:flex;gap:10px;flex-wrap:wrap}.dashboard-actions button{border:0;border-radius:10px;background:#078c92;color:white;padding:12px 18px;cursor:pointer;font-weight:700}.dashboard-actions button:disabled{opacity:.45;cursor:not-allowed}.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.metric-card,.chart-card,.dashboard-empty{background:#fff;border:1px solid #e3ecf2;border-radius:18px;box-shadow:0 10px 25px #143e600c}.metric-card{padding:24px;display:flex;flex-direction:column;gap:10px}.metric-card span{font-size:14px;color:#627b91}.metric-card strong{font-size:36px;color:#087f91}.metric-card small,.dashboard-summary small{color:#75899a}.chart-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:22px}.chart-card{padding:25px}.chart-card h2{font-size:21px;margin:0 0 6px}.chart-card p{margin:0 0 16px}.chart-area{height:320px;min-width:0}.dashboard-summary{margin-top:20px}.dashboard-summary p{line-height:1.7}.dashboard-empty{padding:20px;margin-top:18px;color:#607a90}@media(max-width:800px){.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.chart-grid{grid-template-columns:1fr}}@media(max-width:460px){.metric-grid{grid-template-columns:1fr}.research-dashboard{padding:28px 14px}.chart-card{padding:14px}}
+
+
+/* Clinova AI - Data Quality Monitoring */
+
+.quality-panel {
+  margin-top: 40px;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(20, 62, 96, 0.1);
+  color: #17304b;
+}
+
+.quality-panel h2 {
+  color: #087f91;
+  margin-bottom: 12px;
+}
+
+.quality-panel button {
+  background: #078c92;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  margin: 8px 8px 8px 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.quality-panel button:hover {
+  background: #066e74;
+}
+
+.quality-stats {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(150px, 1fr)
+  );
+  gap: 18px;
+  margin: 25px 0;
+}
+
+.quality-stats article {
+  background: #edf8fa;
+  border-radius: 14px;
+  padding: 22px;
+  text-align: center;
+}
+
+.quality-stats h3 {
+  color: #078c92;
+  font-size: 30px;
+  margin: 0 0 10px;
+}
+
+.quality-stats p {
+  margin: 0;
+  color: #55718a;
+}
+
+.quality-table-wrapper {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.quality-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.quality-table th,
+.quality-table td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #e1edf2;
+}
+
+.quality-table th {
+  background: #e9f5f7;
+  color: #17304b;
+}
+
+.quality-table tr:hover {
+  background: #f4f9fc;
+}
+
+.quality-note {
+  margin-top: 22px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.quality-table select {
+  width: 100%;
+  min-width: 145px;
+  padding: 10px;
+  border: 1px solid #c8dbe5;
+  border-radius: 8px;
+  background: white;
+  color: #17304b;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Separate bordered action buttons */
+
+.quality-panel button {
+  background: #ffffff;
+  color: #078c92;
+  border: 2px solid #078c92;
+  border-radius: 12px;
+  padding: 14px 20px;
+  margin: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quality-panel button:hover {
+  background: #078c92;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(7, 140, 146, 0.2);
+}
+
+/* Researcher review statistics */
+
+.review-stats {
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+
+.review-stats article {
+  border: 1px solid #b7e1e5;
+  background: #f1fafb;
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+}
+
+.review-stats h3 {
+  color: #078c92;
+  font-size: 32px;
+}
+
+/* Clinova AI - Download Report Button */
+
+.quality-panel .download-report-btn {
+  background: #078c92;
+  color: white;
+  border: 2px solid #078c92;
+  border-radius: 12px;
+  padding: 14px 20px;
+  margin: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quality-panel .download-report-btn:hover {
+  background: #066e74;
+  border-color: #066e74;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Clinova AI - Professional Research Summary */
+
+.research-summary {
+  margin: 30px 0;
+  padding: 30px;
+  background: linear-gradient(135deg, #f0fafb, #ffffff);
+  border: 1px solid #cce7e9;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(20, 62, 96, 0.06);
+}
+
+.research-summary h2 {
+  color: #087f91;
+  margin-top: 0;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(150px, 1fr)
+  );
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.summary-grid article {
+  background: white;
+  border: 1px solid #dcebef;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.summary-grid h3 {
+  font-size: 28px;
+  color: #078c92;
+  margin: 0 0 8px;
+}
+
+.summary-grid p {
+  color: #64748b;
+  margin: 0;
+}
+
+.summary-progress {
+  width: 100%;
+  height: 14px;
+  background: #dcebef;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 15px 0;
+}
+
+.summary-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #078c92, #31b8ac);
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+.summary-note {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 20px;
+}
+
+/* =========================================
+   CLINOVA AI — PREMIUM LIGHT EDITION
+   ========================================= */
+
+:root {
+  --premium-bg: #f3f7f9;
+  --premium-white: #ffffff;
+  --premium-navy: #17324d;
+  --premium-teal: #159a92;
+  --premium-muted: #7b8c9d;
+  --premium-border: #e8eef2;
+}
+
+/* Soft pearl-white background */
+
+body {
+  background: #f3f7f9;
+  color: #17324d;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Elegant researcher dashboard panels */
+
+.quality-panel,
+.research-summary,
+.review-chart-card {
+  background: #ffffff;
+  border: 1px solid #e8eef2;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(23, 50, 77, 0.055);
+}
+
+/* Premium headings */
+
+.quality-panel h2,
+.research-summary h2,
+.review-chart-card h3 {
+  color: #17324d;
+  letter-spacing: -0.4px;
+}
+
+/* Subtle card interaction */
+
+.summary-grid article {
+  border: 1px solid #e8eef2;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(23, 50, 77, 0.035);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.summary-grid article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(23, 50, 77, 0.09);
+}
+
+/* ==========================================
+   CLINOVA AI - PREMIUM RESEARCH ANALYTICS
+   ========================================== */
+
+.research-dashboard {
+  background: #f3f7f9;
+  color: #17324d;
+  padding: 32px;
+  border-radius: 24px;
+}
+
+/* Premium heading */
+
+.research-dashboard .dashboard-heading {
+  background: linear-gradient(120deg, #ffffff, #f1faf9);
+  padding: 30px;
+  border: 1px solid #e8eef2;
+  border-radius: 22px;
+  box-shadow: 0 8px 30px rgba(23, 50, 77, 0.05);
+  margin-bottom: 28px;
+}
+
+.research-dashboard .dashboard-heading h1 {
+  color: #17324d;
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 750;
+  letter-spacing: -1px;
+  margin: 8px 0;
+}
+
+.research-dashboard .dashboard-kicker {
+  color: #159a92;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Premium statistic cards */
+
+.research-dashboard .metric-card {
+  background: #ffffff;
+  border: 1px solid #e8eef2;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 28px rgba(23, 50, 77, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.research-dashboard .metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(23, 50, 77, 0.09);
+}
+
+.research-dashboard .metric-card strong {
+  color: #17324d;
+  font-size: 34px;
+  font-weight: 750;
+}
+
+.research-dashboard .metric-card span {
+  color: #7b8c9d;
+}
+
+/* Elegant analytics charts */
+
+.research-dashboard .chart-card {
+  background: #ffffff;
+  border: 1px solid #e8eef2;
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: 0 8px 30px rgba(23, 50, 77, 0.05);
+}
+
+.research-dashboard .chart-card h2 {
+  color: #17324d;
+  letter-spacing: -0.5px;
+}
+
+.research-dashboard .chart-card p {
+  color: #7b8c9d;
+}
+
+/* Responsive layout */
+
+@media (max-width: 768px) {
+  .research-dashboard {
+    padding: 14px;
+  }
+
+  .research-dashboard .dashboard-heading {
+    padding: 20px;
+  }
+
+  .research-dashboard .chart-card {
+    padding: 18px;
+  }
+}
+
+/* Clinova AI — Premium Editorial Header */
+
+.research-dashboard .dashboard-heading {
+  background: linear-gradient(135deg, #ffffff 0%, #f7fcfb 100%);
+  border: 1px solid #e7eeef;
+  border-radius: 24px;
+  padding: 34px 38px;
+  box-shadow: 0 12px 36px rgba(22, 52, 70, 0.045);
+}
+
+.research-dashboard .dashboard-heading h1 {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 650;
+  letter-spacing: -1.2px;
+  line-height: 1.2;
+  color: #17324d;
+}
+
+.research-dashboard .dashboard-kicker {
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  color: #159a92;
+}
+
+.research-dashboard .dashboard-actions button {
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+/* CLINOVA AI — PREMIUM METRIC CARDS */
+
+.research-dashboard .metric-grid {
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.research-dashboard .metric-card {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e7edf1;
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(25, 55, 75, 0.045);
+}
+
+/* Subtle accent on each card */
+
+.research-dashboard .metric-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #159a92;
+}
+
+.research-dashboard .metric-card:nth-child(2)::before {
+  background: #8e9ee8;
+}
+
+.research-dashboard .metric-card:nth-child(3)::before {
+  background: #e8b66c;
+}
+
+.research-dashboard .metric-card:nth-child(4)::before {
+  background: #d99ba9;
+}
+
+/* Typography */
+
+.research-dashboard .metric-card span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #71869a;
+}
+
+.research-dashboard .metric-card strong {
+  display: block;
+  font-size: clamp(30px, 3vw, 38px);
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #17324d;
+  margin: 14px 0;
+}
+
+.research-dashboard .metric-card small {
+  color: #899aaa;
+  font-size: 12px;
+}
+
+/* CLINOVA AI — PREMIUM ANALYTICS CHARTS */
+
+.research-dashboard .chart-grid {
+  gap: 24px;
+  margin-top: 8px;
+  margin-bottom: 30px;
+}
+
+.research-dashboard .chart-card {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e6edf1;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 12px 36px rgba(23, 50, 77, 0.045);
+  transition: box-shadow 0.25s ease;
+}
+
+.research-dashboard .chart-card:hover {
+  box-shadow: 0 18px 42px rgba(23, 50, 77, 0.085);
+}
+
+.research-dashboard .chart-card h2 {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  color: #17324d;
+  margin-bottom: 8px;
+}
+
+.research-dashboard .chart-card p {
+  color: #8193a6;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.research-dashboard .chart-area {
+  margin-top: 22px;
+}
+
+/* Keep charts readable on small screens */
+
+@media (max-width: 768px) {
+  .research-dashboard .chart-card {
+    padding: 20px;
+  }
+
+  .research-dashboard .chart-grid {
+    gap: 16px;
+  }
+}
+
+/* ==========================================
+   CLINOVA AI — PREMIUM RESEARCH DATA TABLE
+   ========================================== */
+
+.quality-table-wrapper {
+  overflow-x: auto;
+  margin-top: 24px;
+  background: #ffffff;
+  border: 1px solid #e3edf0;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(23, 50, 77, 0.04);
+}
+
+.quality-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+  color: #334e63;
+}
+
+.quality-table th {
+  background: #edf7f6;
+  color: #17324d;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 18px 20px;
+  border-bottom: 1px solid #dceae9;
+  white-space: nowrap;
+}
+
+.quality-table td {
+  padding: 17px 20px;
+  border-bottom: 1px solid #edf1f4;
+  background: #ffffff;
+  vertical-align: middle;
+}
+
+.quality-table tbody tr:hover td {
+  background: #f3faf9;
+}
+
+.quality-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Researcher decision dropdown */
+
+.quality-table select {
+  background: #f5faf9;
+  border: 1px solid #d5e7e5;
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: #17324d;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  min-width: 145px;
+}
+
+.quality-table select:focus {
+  outline: none;
+  border-color: #159a92;
+  box-shadow: 0 0 0 3px rgba(21, 154, 146, 0.12);
+}
+
+/* Small-screen support */
+
+@media (max-width: 768px) {
+  .quality-table th,
+  .quality-table td {
+    padding: 13px 14px;
+    font-size: 12px;
+  }
+}
+
+/* HYPERTENSION RESEARCH ANALYTICS */
+
+.hypertension-analytics {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e0ebee;
+  border-radius: 22px;
+  box-shadow: 0 8px 30px rgba(22, 60, 85, 0.04);
+}
+
+.hypertension-analytics-header {
+  margin-bottom: 26px;
+}
+
+.hypertension-analytics-header span {
+  color: #0b9294;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.hypertension-analytics-header h2 {
+  color: #17324d;
+  font-size: 25px;
+  margin: 10px 0;
+}
+
+.hypertension-analytics-header p {
+  color: #70879a;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.hypertension-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.hypertension-metric-card {
+  background: linear-gradient(145deg, #f6fbfb, #ffffff);
+  border: 1px solid #dcebea;
+  border-radius: 16px;
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hypertension-metric-card span {
+  color: #648094;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.hypertension-metric-card strong {
+  color: #123c56;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.hypertension-metric-card small {
+  color: #8397a5;
+  font-size: 12px;
+}
+
+.hypertension-chart-card {
+  background: #ffffff;
+  border: 1px solid #e3edf0;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.hypertension-chart-card h3 {
+  color: #17324d;
+  margin: 0 0 8px;
+}
+
+.hypertension-chart-card p {
+  color: #74899a;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .hypertension-metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .hypertension-analytics {
+    padding: 18px;
+  }
+
+  .hypertension-metric-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Clinova AI — mobile chart sizing */
+@media (max-width: 768px) {
+  .recharts-responsive-container {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 280px !important;
+    min-height: 280px !important;
+  }
+
+  .recharts-wrapper {
+    max-width: 100%;
+  }
+}
+
+/* Mobile-only researcher dashboard chart fixes */
+@media (max-width: 768px) {
+  .chart-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+  }
+
+  .chart-card {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .chart-area {
+    width: 100%;
+    height: 300px;
+    min-width: 0;
+    min-height: 300px;
+    position: relative;
+  }
+
+  .chart-area .recharts-responsive-container {
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .review-chart-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .review-chart-card .recharts-responsive-container {
+    min-width: 0;
+    width: 100% !important;
+  }
+}
+
+/* Fix invisible Recharts graphs */
+.chart-area {
+  width: 100%;
+  height: 300px;
+  min-height: 300px;
+  min-width: 0;
+}
+
+.chart-card {
+  min-width: 0;
+}
+
+.chart-grid {
+  min-width: 0;
+}
