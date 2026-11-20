@@ -427,6 +427,11 @@ Our ambition is to help researchers spend less time on repetitive data checks an
 
 **We are not simply building another data collection website. We are building toward a system that helps researchers question, verify, and strengthen the information upon which scientific evidence depends.**
 
+## 🎬 Clinova AI Demo Video
+
+Watch our official Team 2016S hackathon demonstration:
+
+[Watch Clinova AI Demo](PASTE_YOUR_VIDEO_LINK_HERE)
 ### CLINOVA AI
 
 **Because Better Evidence Begins with Better Data.**
